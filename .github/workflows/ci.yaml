@@ -1,0 +1,13 @@
+name: CI_ddprofiler
+
+on: push
+
+jobs:
+  integration-test-aurum:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 20
+    steps:
+      - uses: TheDataStation/integration/.github/actions/integ-aurum@master
+        with:
+          aurum_repository: ${{ github.repository }}
+          aurum_commit: ${{ github.ref }}
